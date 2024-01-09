@@ -1,3 +1,6 @@
+import { LinkButton } from "@/components/LinkButton";
+import { SearchBar } from "./SearchBar";
+
 export function Header() {
   return (
     <header className="w-full">
@@ -5,15 +8,15 @@ export function Header() {
         <div className="flex gap-8 items-center">
           <h6><strong className="font-bold">UNGS</strong> Archive</h6>
           <nav className="flex gap-4">
-            <a className="px-2 py-1 capitalize" href="">pagina</a>
-            <a className="px-2 py-1 capitalize" href="">pagina</a>
-            <a className="px-2 py-1 capitalize" href="">pagina</a>
+            <LinkButton value={"explorar"} url={"/explorar"} />
+            <LinkButton value={"recursos"} url={"/recursos"} />
+            <LinkButton value={"materias"} url={"/materias"} />
           </nav>
         </div>
 
-        <div>
-          Search bar...
-          <a href="">Iniciar sesión</a>
+        <div className="flex gap-4 items-center">
+          <SearchBar />
+          <a className="bg-accent px-4 py-2 rounded-full border-t border-accent-foreground" href="">Iniciar sesión</a>
         </div>
       </div>
     </header>
