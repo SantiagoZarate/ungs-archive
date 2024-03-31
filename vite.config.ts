@@ -13,6 +13,11 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@icon": path.resolve(__dirname, "src/components/icons/index.tsx"),
+      "@component": path.resolve(__dirname, "src/components"),
+      "@hook": path.resolve(__dirname, "src/hooks"),
+      "@util": path.resolve(__dirname, "src/utils"),
+      "@data": path.resolve(__dirname, "src/data"),
     },
   },
 });

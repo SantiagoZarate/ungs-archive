@@ -15,7 +15,12 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*" : ["./src/*"]
+      "@/*": ["./src/*"],
+      "@icon": ["src/components/icons/index.tsx"],
+      "@components/*": ["src/components/*"],
+      "@hook/*": ["src/hooks/*"],
+      "@util/*": ["src/utils/*"],
+      "@data/*": ["src/data/*"]
     },
     /* Linting */
     "strict": true,
