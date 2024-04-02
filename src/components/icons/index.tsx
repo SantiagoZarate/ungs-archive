@@ -35,3 +35,5 @@ export function XIcon() {
     </svg>
   );
 }
+
+export * from "./UNGSIcon";
