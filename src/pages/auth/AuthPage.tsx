@@ -13,7 +13,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { useRef, useState } from "react";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -25,18 +24,6 @@ const formSchema = z.object({
 type FormPropsType = z.infer<typeof formSchema>;
 
 export function AuthPage() {
-  const cardsRef = useRef<HTMLElement>(null);
-  const [cursor, setCursor] = useState({ x: 0, y: 0 });
-
-  const handleMouse = (event: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    if (cardsRef.current !== null) {
-      const rect = cardsRef.current.getBoundingClientRect();
-      const x = event.clientX - rect.x;
-      const y = event.clientY - rect.y;
-      setCursor({ x, y });
-    }
-  };
-
   const form = useForm<FormPropsType>({
     resolver: zodResolver(formSchema),
   });
@@ -46,11 +33,7 @@ export function AuthPage() {
   };
 
   return (
-    <section
-      className="bg-neutral-950 grid grid-cols-2 min-h-screen w-full"
-      ref={cardsRef}
-      onMouseMove={(e) => handleMouse(e)}
-    >
+    <section className="bg-neutral-950 grid grid-cols-2 min-h-screen w-full">
       <div className="flex items-center justify-center">
         <Form {...form}>
           <form
@@ -89,7 +72,7 @@ export function AuthPage() {
       </div>
       <div className="flex items-center flex-col justify-center">
         <article className="flex">
-          <UNGSIcon cursor={cursor} cardRef={cardsRef} />
+          <UNGSIcon />
         </article>
         <footer>
           <h2 className="font-bold text-2xl">UNGS Archive</h2>

@@ -1,29 +1,4 @@
-import { useState, type RefObject, useEffect } from "react";
-
-interface Props {
-  cursor: { x: number; y: number };
-  cardRef: RefObject<HTMLElement>;
-}
-
-export function UNGSIcon({ cardRef, cursor }: Props) {
-  const [cxGradientCords, setCxGradientCords] = useState({
-    cx: "50%",
-    cy: "50%",
-  });
-
-  useEffect(() => {
-    if (cardRef.current && cursor.x !== null && cursor.y !== null) {
-      const refRect = cardRef.current.getBoundingClientRect();
-      const cxPercentage = (cursor.x / refRect.width) * 100;
-      const cyPercentage = (cursor.y / refRect.height) * 100;
-      setCxGradientCords({
-        cx: `${cxPercentage}`,
-        cy: `${cyPercentage}`,
-      });
-      console.log(cxGradientCords);
-    }
-  }, [cardRef, cursor]);
-
+export function UNGSIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -34,12 +9,7 @@ export function UNGSIcon({ cardRef, cursor }: Props) {
       className="duration-200 transition-all"
     >
       <defs>
-        <radialGradient
-          id="emeraldGradient"
-          gradientUnits="userSpaceOnUse"
-          cx={"50%"}
-          cy={"100%"}
-        >
+        <radialGradient id="emeraldGradient" gradientUnits="userSpaceOnUse">
           <stop stopColor="#10b981" />
           <stop offset={1} stopColor="#404040" />
         </radialGradient>
