@@ -8,10 +8,10 @@ export function ExplorePage() {
         {materias.map((materia) => (
           <Link
             to={"/"}
-            className="group bg-zinc-900 p-4 rounded-lg min-h-28 relative overflow-hidden border border-zinc-700"
+            className="group bg-zinc-900 p-4 rounded-lg min-h-28 relative overflow-hidden border border-zinc-700 shadow-lg hover:-translate-y-1 transition"
           >
-            <h4>{materia.nombre}</h4>
-            <p>{materia.abreviacion}</p>
+            <h4 className="capitalize text-sm font-bold">{materia.nombre}</h4>
+            <p className="uppercase text-zinc-600">{materia.abreviacion}</p>
             <span className="absolute group-hover:right-0 group-hover:bottom-0 duration-300 transition-all -right-5 -bottom-5 text-zinc-700">
               {materia.icon}
             </span>

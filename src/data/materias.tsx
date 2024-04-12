@@ -1,6 +1,5 @@
-import { ProcessorIcon, DeveloperIcon } from "@/components/icons";
+import { ProcessorIcon, DeveloperIcon, DatabaseIcon } from "@/components/icons";
 import { Materia } from "@/types";
-import { DatabaseIcon } from "lucide-react";
 
 export const materias: Materia[] = [
   {
